@@ -111,6 +111,61 @@ addressInput.addEventListener("input", function(event) {
     }
 });
 
+
+
+
+const swiper =  new Swiper('.swiper-container', {
+
+    slidesPerView: 1,
+    spaceBetween: 10,    
+    autoHeight: false,
+    centeredSlides: true,
+    loop:true,
+    
+    // Se precisarmos de setas de navegação
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        481: {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            centeredSlides: false,
+        },
+        640: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            centeredSlides: false,
+        },
+        992: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            centeredSlides: false,
+        },
+    },
+});
+
+
+
+/*const swiper = new Swiper('.swiper-container', {
+    // Paramentos opcionais
+    loop: true,
+    autoHeight: true,
+    autoWidth: true,
+
+    // se precisarmos de paginação
+    pagination: {
+        el: '.swiper-pagination',
+    },
+});
+*/
+
+
 // Função para finalizar pedido dos produtos
 checkoutBtn.addEventListener("click", function() {
     const isOpen = checkRestaurantOpen();
@@ -148,7 +203,7 @@ checkoutBtn.addEventListener("click", function() {
 // Verificar a hora e manipular o card horário
 function checkRestaurantOpen() {
     const hora = new Date().getHours();
-    return hora >= 8 && hora < 22; // true = restaurante está aberto
+    return hora >= 8 && hora < 21; // true = restaurante está aberto
 }
 
 const spanItem = document.getElementById("date-span");
