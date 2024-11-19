@@ -2061,6 +2061,11 @@ video {
   background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
 .bg-home {
   background-image: url('/assets/bg.png');
 }
@@ -2950,6 +2955,11 @@ body{
   background-color: rgb(229 232 236 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-gray-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-red-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
@@ -3001,16 +3011,6 @@ body{
   .max-sm\:px-\[1\.5em\] {
     padding-left: 1.5em;
     padding-right: 1.5em;
-  }
-}
-
-@media (min-width: 481px) {
-  .min-\[481px\]\:visible {
-    visibility: visible;
-  }
-
-  .min-\[481px\]\:hidden {
-    display: none;
   }
 }
 
