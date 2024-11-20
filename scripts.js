@@ -114,23 +114,22 @@ addressInput.addEventListener("input", function(event) {
 
 //Produtos destacados gerados dinamicamente
 const slider_produtos = [
-    { nome: "Hambúrguer Smash", img: "assets/hamb-1.png", descricao: "Mate a fome com o smash!", preco: "1000" },
-    { nome: "Hambúrguer Duplo", img: "assets/hamb-2.png", descricao: "Mate a fome com o duplo!", preco: "1000" },
-    { nome: "Hambúrguer Triplo", img: "assets/hamb-3.png", descricao: "Mate a fome com o triplo!", preco: "1000" },
-    { nome: "Hambúrguer Salad", img: "assets/hamb-6.png", descricao: "Mate a fome com o especial!", preco: "1000" },
-    { nome: "Hambúrguer Maravilha", img: "assets/hamb-5.png", descricao: "Mate a fome com o maravilha!", preco: "1000" }
+    { nome: "Hambúrguer Smash", img: "assets/hamb-1.png", descricao: "Mate a fome com o Smash!", preco: "1000" },
+    { nome: "Hambúrguer Duplo", img: "assets/hamb-3.png", descricao: "Mate a gula com o Duplo!", preco: "1000" },
+    { nome: "Hambúrguer da Casa", img: "assets/hamb-7.png", descricao: "Triplique o sabor com o da Casa!", preco: "1000" },
+    { nome: "Hambúrguer Salad", img: "assets/hamb-6.png", descricao: "Sinta no seu paladar o Especial!", preco: "1000" },
+    { nome: "Hambúrguer Triplo", img: "assets/hamb-2.png", descricao: "Mate a fome com o Triplo!", preco: "1000" }
 ];
 
 slider_produtos.forEach(produto => {
     document.querySelector('.swiper-wrapper').innerHTML += `
-        <div class="swiper-slide flex flex-col items-center bg-white justify-center rounded-lg min-[320px]:p-4 drop-shadow-md">
+        <div class="swiper-slide flex flex-col items-center bg-white justify-center rounded-lg min-[320px]:p-4 drop-shadow-sm">
             <div class="object-cover rounded-lg">
                 <img src="${produto.img}" alt="${produto.nome}" class="max-w-full md:w-96   h-auto rounded-2xl">
             </div>
-            <div class="text-content top-10 flex flex-col items-center">
+            <div class="text-content mt-2 flex flex-col items-center">
                 <h4 class="text-xl  font-bold">${produto.nome}</h4>
-                <h2 class="text-lg text-center"><span>${produto.descricao}</span></h2>
-                
+                <h2 class="text-lg text-center text-gray-500"><span>${produto.descricao}</span></h2>
             </div>
         </div>`;
 });
