@@ -40,6 +40,83 @@ function addToCart(name, price, image) {
     updateCartModal();
 }
 
+
+
+
+//Slider products
+const slider_produtos = [
+    { nome: "Hambúrguer Smash", img: "assets/hamb-1.png", descricao: "Mate a fome com o smash!"},
+    { nome: "Hambúrguer Duplo", img: "assets/hamb-3.png", descricao: "Mate a gula com o duplo!"},
+    { nome: "Hambúrguer da Casa", img: "assets/hamb-7.png", descricao: "Triplique o sabor com o da casa!"},
+    { nome: "Hambúrguer Salad", img: "assets/hamb-6.png", descricao: "Sinta no seu paladar o especial!"},
+    { nome: "Hambúrguer Triplo", img: "assets/hamb-2.png", descricao: "Mate a fome com o Triplo!"},
+];
+
+slider_produtos.forEach(produto => {
+    document.querySelector('.swiper-wrapper').innerHTML += `
+        <div class="swiper-slide flex flex-col items-center justify-center rounded-lg -z-[1] p-4">
+            <div class="object-cover items-center justify-center rounded-2xl my-6 ">
+                <img src="${produto.img}" alt="${produto.nome}" class="max-w-full h-auto rounded-3xl p-2 hover:cursor-pointer">
+            </div>
+            <div class="flex flex-col items-center -mt-5">
+                <h4 class="text-xl  font-bold">${produto.nome}</h4>
+                <h2 class="text-base text-center"><span>${produto.descricao}</span></h2>
+            </div>
+        </div>`;
+});
+
+
+const swiper =  new Swiper('.swiper-container', {
+
+    slidesPerView: 1,
+    spaceBetween: 10,    
+    autoHeight: false,
+    centeredSlides: true,
+    loop:true,
+    
+    // Se precisarmos de setas de navegação
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    /*autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },*/
+    breakpoints: {
+        481: {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            centeredSlides: false,
+        },
+        640: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            centeredSlides: false,
+            
+        },
+        992: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            centeredSlides: false,
+        },
+    },
+});
+
+/*const swiper = new Swiper('.swiper-container', {
+    // Paramentos opcionais
+    loop: true,
+    autoHeight: true,
+    autoWidth: true,
+
+    // se precisarmos de paginação
+    pagination: {
+        el: '.swiper-pagination',
+    },
+});
+*/
+
+
 // Função para atualizar o modal do carrinho
 function updateCartModal() {
     cartItemsContainer.innerHTML = "";
@@ -112,81 +189,6 @@ addressInput.addEventListener("input", function(event) {
 });
 
 
-//Produtos destacados gerados dinamicamente
-const slider_produtos = [
-    { nome: "Hambúrguer Smash", img: "assets/hamb-1.png", descricao: "Mate a fome com o Smash!", preco: "1000" },
-    { nome: "Hambúrguer Duplo", img: "assets/hamb-3.png", descricao: "Mate a gula com o Duplo!", preco: "1000" },
-    { nome: "Hambúrguer da Casa", img: "assets/hamb-7.png", descricao: "Triplique o sabor com o da Casa!", preco: "1000" },
-    { nome: "Hambúrguer Salad", img: "assets/hamb-6.png", descricao: "Sinta no seu paladar o Especial!", preco: "1000" },
-    { nome: "Hambúrguer Triplo", img: "assets/hamb-2.png", descricao: "Mate a fome com o Triplo!", preco: "1000" }
-];
-
-slider_produtos.forEach(produto => {
-    document.querySelector('.swiper-wrapper').innerHTML += `
-        <div class="swiper-slide flex flex-col items-center bg-white justify-center rounded-lg min-[320px]:p-4 drop-shadow-sm">
-            <div class="object-cover rounded-lg">
-                <img src="${produto.img}" alt="${produto.nome}" class="max-w-full md:w-96   h-auto rounded-2xl">
-            </div>
-            <div class="text-content mt-2 flex flex-col items-center">
-                <h4 class="text-xl  font-bold">${produto.nome}</h4>
-                <h2 class="text-lg text-center text-gray-500"><span>${produto.descricao}</span></h2>
-            </div>
-        </div>`;
-});
-
-
-
-const swiper =  new Swiper('.swiper-container', {
-
-    slidesPerView: 1,
-    spaceBetween: 10,    
-    autoHeight: false,
-    centeredSlides: true,
-    loop:true,
-    
-    // Se precisarmos de setas de navegação
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    /*autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },*/
-    breakpoints: {
-        481: {
-            slidesPerView: 2,
-            slidesPerGroup: 1,
-            centeredSlides: false,
-        },
-        640: {
-            slidesPerView: 3,
-            slidesPerGroup: 3,
-            centeredSlides: false,
-            
-        },
-        992: {
-            slidesPerView: 4,
-            slidesPerGroup: 4,
-            centeredSlides: false,
-        },
-    },
-});
-
-
-
-/*const swiper = new Swiper('.swiper-container', {
-    // Paramentos opcionais
-    loop: true,
-    autoHeight: true,
-    autoWidth: true,
-
-    // se precisarmos de paginação
-    pagination: {
-        el: '.swiper-pagination',
-    },
-});
-*/
 
 
 // Função para finalizar pedido dos produtos
@@ -207,6 +209,7 @@ checkoutBtn.addEventListener("click", function() {
         return;
     }
     if (cart.length === 0) return;
+
     if (addressInput.value === "") {
         addressWarn.classList.remove("hidden");
         addressInput.classList.add("border-red-500");
