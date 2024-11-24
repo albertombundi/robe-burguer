@@ -2311,6 +2311,16 @@ video {
   padding-bottom: 5em;
 }
 
+.py-\[4em\] {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.py-\[3em\] {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
 .text-left {
   text-align: left;
 }
