@@ -59,8 +59,8 @@ slider_produtos.forEach(produto => {
                 <img src="${produto.img}" alt="${produto.nome}" class="max-w-full h-auto rounded-3xl p-2 hover:cursor-pointer">
             </div>
             <div class="flex flex-col items-center -mt-5">
-                <h4 class="text-xl  font-bold">${produto.nome}</h4>
-                <h2 class="text-base text-center"><span>${produto.descricao}</span></h2>
+                <h3 class="text-xl  font-bold">${produto.nome}</h3>
+                <h4 class="text-base text-center"><span>${produto.descricao}</span></h4>
             </div>
             <div class="mt-2">
                 <span class="p-1"><a href="#"><i class="fa fa-heart"></i> Gosto</a></span>
