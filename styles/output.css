@@ -2408,6 +2408,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .font-\[400\] {
   font-weight: 400;
 }
@@ -2517,11 +2522,6 @@ video {
 .text-amber-500 {
   --tw-text-opacity: 1;
   color: rgb(245 158 11 / var(--tw-text-opacity));
-}
-
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-blue-500 {
@@ -3063,12 +3063,6 @@ body{
   }
 }
 
-@media (min-width: 481px) {
-  .min-\[481px\]\:overflow-x-hidden {
-    overflow-x: hidden;
-  }
-}
-
 @media (min-width: 640px) {
   .sm\:underline {
     text-decoration-line: underline;
@@ -3098,12 +3092,6 @@ body{
   .min-\[992px\]\:px-\[2em\] {
     padding-left: 2em;
     padding-right: 2em;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:overflow-x-scroll {
-    overflow-x: scroll;
   }
 }
 

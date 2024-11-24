@@ -62,6 +62,11 @@ slider_produtos.forEach(produto => {
                 <h4 class="text-xl  font-bold">${produto.nome}</h4>
                 <h2 class="text-base text-center"><span>${produto.descricao}</span></h2>
             </div>
+            <div class="mt-2">
+                <span class="p-1"><a href="#"><i class="fa fa-heart"></i> Gosto</a></span>
+                <span class="p-1"><a href="#"><i class="fa fa-gift"></i></a></span>
+                <span class="p-2"><a href="#"><i class="fa fa-share"></i> Partilhar</a></span>
+            </div>
         </div>`;
 });
 
