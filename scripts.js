@@ -84,10 +84,10 @@ const swiper =  new Swiper('.swiper-container', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-    /*autoplay: {
+    autoplay: {
         delay: 3000,
         disableOnInteraction: false,
-    },*/
+    },
     breakpoints: {
         481: {
             slidesPerView: 2,
