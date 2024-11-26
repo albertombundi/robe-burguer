@@ -47,9 +47,10 @@ function addToCart(name, price, image) {
 const slider_produtos = [
     { nome: "Hambúrguer Smash", img: "assets/hamb-1.png", descricao: "Mate a fome com o smash!"},
     { nome: "Hambúrguer Duplo", img: "assets/hamb-3.png", descricao: "Mate a gula com o duplo!"},
-    { nome: "Hambúrguer da Casa", img: "assets/hamb-7.png", descricao: "Triplique o sabor com o da casa!"},
-    { nome: "Hambúrguer Salad", img: "assets/hamb-6.png", descricao: "Sinta no seu paladar o especial!"},
+    { nome: "Hambúrguer da Casa", img: "assets/hamb-7.png", descricao: "Triplique o sabor da casa!"},
+    { nome: "Hambúrguer Especial", img: "assets/hamb-6.png", descricao: "Sinta no seu paladar o especial!"},
     { nome: "Hambúrguer Triplo", img: "assets/hamb-2.png", descricao: "Mate a fome com o Triplo!"},
+    { nome: "Hambúrguer Salad", img: "assets/hamb-4.png", descricao: "A base de carne salada e queijo!"},
 ];
 
 slider_produtos.forEach(produto => {
@@ -85,7 +86,7 @@ const swiper =  new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     },
     autoplay: {
-        delay: 3000,
+        delay: 1500,
         disableOnInteraction: false,
     },
     breakpoints: {
@@ -239,5 +240,5 @@ function checkRestaurantOpen() {
 
 const spanItem = document.getElementById("date-span");
 const isOpen = checkRestaurantOpen();
-spanItem.classList.toggle("bg-green-600", isOpen);
+spanItem.classList.toggle("bg-green-700", isOpen);
 spanItem.classList.toggle("bg-red-600", !isOpen);
