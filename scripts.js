@@ -43,7 +43,7 @@ function addToCart(name, price, image) {
 
 
 
-//Slider products
+// Slider dos produtos
 const slider_produtos = [
     { nome: "Hambúrguer Smash", img: "assets/hamb-1.png", descricao: "Mate a fome com o smash!"},
     { nome: "Hambúrguer Duplo", img: "assets/hamb-3.png", descricao: "Mate a gula com o duplo!"},
